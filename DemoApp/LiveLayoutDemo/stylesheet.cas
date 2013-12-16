@@ -1,6 +1,13 @@
 
 
-UIView.my-box {
-    cas_size: 100 100
-    cas_margin: 200 90 0 0
+UIView.blue-box {
+    cas_size: 120 80
+    cas_margin-top: 70
+    cas_margin-left: 50
 }
+
+UIView.red-box {
+    cas_size-width: 70
+    cas_margin-left: 10
+}
+

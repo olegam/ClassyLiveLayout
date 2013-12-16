@@ -16,9 +16,20 @@
 
 - (void)setCas_margin:(UIEdgeInsets)cas_margin {
 	[self willChangeValueForKey:@"cas_margin"];
+	[self willChangeValueForKey:@"cas_marginTop"];
+	[self willChangeValueForKey:@"cas_marginLeft"];
+	[self willChangeValueForKey:@"cas_marginBottom"];
+	[self willChangeValueForKey:@"cas_marginRight"];
+
 	NSValue *value = [NSValue valueWithUIEdgeInsets:cas_margin];
 	objc_setAssociatedObject(self, @selector(cas_margin), value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+
 	[self didChangeValueForKey:@"cas_margin"];
+	[self didChangeValueForKey:@"cas_marginTop"];
+	[self didChangeValueForKey:@"cas_marginLeft"];
+	[self didChangeValueForKey:@"cas_marginBottom"];
+	[self didChangeValueForKey:@"cas_marginRight"];
+
 	[self.superview setNeedsUpdateConstraints];
 }
 
@@ -29,10 +40,79 @@
 
 - (void)setCas_size:(CGSize)cas_size {
 	[self willChangeValueForKey:@"cas_size"];
+	[self willChangeValueForKey:@"cas_sizeWidth"];
+	[self willChangeValueForKey:@"cas_sizeHeight"];
+
 	NSValue *value = [NSValue valueWithCGSize:cas_size];
 	objc_setAssociatedObject(self, @selector(cas_size), value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+
 	[self didChangeValueForKey:@"cas_size"];
+	[self didChangeValueForKey:@"cas_sizeWidth"];
+	[self didChangeValueForKey:@"cas_sizeHeight"];
+
 	[self.superview setNeedsUpdateConstraints];
+}
+
+#pragma mark - Shorthands
+
+- (CGFloat)cas_sizeWidth {
+	return self.cas_size.width;
+}
+
+- (void)setCas_sizeWidth:(CGFloat)cas_sizeWidth {
+	CGSize currentSize = self.cas_size;
+	currentSize.width = cas_sizeWidth;
+	self.cas_size = currentSize;
+}
+
+- (CGFloat)cas_sizeHeight {
+	return self.cas_size.height;
+}
+
+- (void)setCas_sizeHeight:(CGFloat)cas_sizeHeight {
+	CGSize currentSize = self.cas_size;
+	currentSize.height = cas_sizeHeight;
+	self.cas_size = currentSize;
+}
+
+- (CGFloat)cas_marginTop {
+	return self.cas_margin.top;
+}
+
+- (void)setCas_marginTop:(CGFloat)cas_marginTop {
+	UIEdgeInsets currentMargin = self.cas_margin;
+	currentMargin.top = cas_marginTop;
+	self.cas_margin = currentMargin;
+}
+
+- (CGFloat)cas_marginLeft {
+	return self.cas_margin.left;
+}
+
+- (void)setCas_marginLeft:(CGFloat)cas_marginLeft {
+	UIEdgeInsets currentMargin = self.cas_margin;
+	currentMargin.left = cas_marginLeft;
+	self.cas_margin = currentMargin;
+}
+
+- (CGFloat)cas_marginBottom {
+	return self.cas_margin.bottom;
+}
+
+- (void)setCas_marginBottom:(CGFloat)cas_marginBottom {
+	UIEdgeInsets currentMargin = self.cas_margin;
+	currentMargin.bottom = cas_marginBottom;
+	self.cas_margin = currentMargin;
+}
+
+- (CGFloat)cas_marginRight {
+	return self.cas_margin.right;
+}
+
+- (void)setCas_marginRight:(CGFloat)cas_marginRight {
+	UIEdgeInsets currentMargin = self.cas_margin;
+	currentMargin.right = cas_marginRight;
+	self.cas_margin = currentMargin;
 }
 
 

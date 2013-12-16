@@ -8,7 +8,8 @@
 
 @interface DemoViewController ()
 
-@property(nonatomic, strong) UIView *boxView;
+@property(nonatomic, strong) UIView *blueBoxView;
+@property(nonatomic, strong) UIView *redBoxView;
 
 @end
 
@@ -24,27 +25,44 @@
 }
 
 - (void)addViews {
-	[self.view addSubview:self.boxView];
+	[self.view addSubview:self.blueBoxView];
+	[self.view addSubview:self.redBoxView];
 }
 
 - (void)updateViewConstraints {
 	[super updateViewConstraints];
 
-	[_boxView mas_updateConstraints:^(MASConstraintMaker *make) {
-		make.width.equalTo(@(_boxView.cas_size.width));
-		make.height.equalTo(@(_boxView.cas_size.height));
-		make.top.equalTo(@(_boxView.cas_margin.top));
-		make.left.equalTo(@(_boxView.cas_margin.left));
+	[_blueBoxView mas_updateConstraints:^(MASConstraintMaker *make) {
+		make.width.equalTo(@(_blueBoxView.cas_size.width));
+		make.height.equalTo(@(_blueBoxView.cas_size.height));
+		make.top.equalTo(@(_blueBoxView.cas_margin.top));
+		make.left.equalTo(@(_blueBoxView.cas_margin.left));
+	}];
+
+	[_redBoxView mas_updateConstraints:^(MASConstraintMaker *make) {
+		make.width.equalTo(@(_redBoxView.cas_size.width));
+		make.height.equalTo(_blueBoxView);
+		make.top.equalTo(_blueBoxView);
+		make.left.equalTo(_blueBoxView.mas_right).with.offset(_redBoxView.cas_margin.left);
 	}];
 }
 
-- (UIView *)boxView {
-	if (!_boxView) {
-		_boxView = [UIView new];
-		_boxView.backgroundColor = [UIColor blueColor];
-		_boxView.cas_styleClass = @"my-box";
+- (UIView *)blueBoxView {
+	if (!_blueBoxView) {
+		_blueBoxView = [UIView new];
+		_blueBoxView.backgroundColor = [UIColor blueColor];
+		_blueBoxView.cas_styleClass = @"blue-box";
 	}
-	return _boxView;
+	return _blueBoxView;
+}
+
+- (UIView *)redBoxView {
+	if (!_redBoxView) {
+		_redBoxView = [UIView new];
+		_redBoxView.backgroundColor = [UIColor redColor];
+		_redBoxView.cas_styleClass = @"red-box";
+	}
+	return _redBoxView;
 }
 
 
