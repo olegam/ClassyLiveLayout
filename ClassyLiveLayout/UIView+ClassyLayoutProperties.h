@@ -19,4 +19,12 @@
 @property(nonatomic, assign) CGFloat cas_marginBottom;
 @property(nonatomic, assign) CGFloat cas_marginRight;
 
+
+// Masonry shortcuts to make it easy to bind values to what is defined in classy stylesheet
+- (NSArray *)mas_updateConstraintsWithTopMarginRelativeTo:(id)attribute;
+- (NSArray *)mas_updateConstraintsWithLeftMarginRelativeTo:(id)attribute;
+- (NSArray *)mas_updateConstraintsWithBottomMarginRelativeTo:(id)attribute;
+- (NSArray *)mas_updateConstraintsWithRightMarginRelativeTo:(id)attribute;
+- (NSArray *)mas_updateConstraintsHeightFromStylesheet;
+- (NSArray *)mas_updateConstraintsWidthFromStylesheet;
 @end

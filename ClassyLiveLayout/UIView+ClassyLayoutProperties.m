@@ -5,14 +5,25 @@
 
 #import <objc/runtime.h>
 #import "UIView+ClassyLayoutProperties.h"
+#import "View+MASAdditions.h"
 
 
 @implementation UIView (ClassyLayoutProperties)
 
+- (void)updateSuperviewsConstraints {
+	// Only trigger reloading of constrains when debugging to not hurt performance
+#ifdef TARGET_IPHONE_SIMULATOR
+	UIView *view = self.superview;
+	while (view) {
+		[view setNeedsUpdateConstraints];
+		view = view.superview;
+	}
+#endif
+}
+
 - (UIEdgeInsets)cas_margin {
 	return [(NSValue *) objc_getAssociatedObject(self, @selector(cas_margin)) UIEdgeInsetsValue];
 }
-
 
 - (void)setCas_margin:(UIEdgeInsets)cas_margin {
 	[self willChangeValueForKey:@"cas_margin"];
@@ -30,13 +41,12 @@
 	[self didChangeValueForKey:@"cas_marginBottom"];
 	[self didChangeValueForKey:@"cas_marginRight"];
 
-	[self.superview setNeedsUpdateConstraints];
+	[self updateSuperviewsConstraints];
 }
 
 - (CGSize)cas_size {
 	return [(NSValue *) objc_getAssociatedObject(self, @selector(cas_size)) CGSizeValue];
 }
-
 
 - (void)setCas_size:(CGSize)cas_size {
 	[self willChangeValueForKey:@"cas_size"];
@@ -50,7 +60,7 @@
 	[self didChangeValueForKey:@"cas_sizeWidth"];
 	[self didChangeValueForKey:@"cas_sizeHeight"];
 
-	[self.superview setNeedsUpdateConstraints];
+	[self updateSuperviewsConstraints];
 }
 
 #pragma mark - Shorthands
@@ -114,6 +124,45 @@
 	currentMargin.right = cas_marginRight;
 	self.cas_margin = currentMargin;
 }
+
+#pragma mark - Masonry shortcuts
+
+- (NSArray *)mas_updateConstraintsWithTopMarginRelativeTo:(id)attribute {
+	return [self mas_updateConstraints:^(MASConstraintMaker *make) {
+		make.top.equalTo(attribute).with.offset(self.cas_marginTop);
+	}];
+}
+
+- (NSArray *)mas_updateConstraintsWithLeftMarginRelativeTo:(id)attribute {
+	return [self mas_updateConstraints:^(MASConstraintMaker *make) {
+		make.left.equalTo(attribute).with.offset(self.cas_marginLeft);
+	}];
+}
+
+- (NSArray *)mas_updateConstraintsWithBottomMarginRelativeTo:(id)attribute {
+	return [self mas_updateConstraints:^(MASConstraintMaker *make) {
+		make.bottom.equalTo(attribute).with.offset(- self.cas_marginBottom);
+	}];
+}
+
+- (NSArray *)mas_updateConstraintsWithRightMarginRelativeTo:(id)attribute {
+	return [self mas_updateConstraints:^(MASConstraintMaker *make) {
+		make.right.equalTo(attribute).with.offset(- self.cas_marginRight);
+	}];
+}
+
+- (NSArray *)mas_updateConstraintsHeightFromStylesheet {
+	return [self mas_updateConstraints:^(MASConstraintMaker *make) {
+		make.height.equalTo(@(self.cas_sizeHeight));
+	}];
+}
+
+- (NSArray *)mas_updateConstraintsWidthFromStylesheet {
+	return [self mas_updateConstraints:^(MASConstraintMaker *make) {
+		make.width.equalTo(@(self.cas_sizeWidth));
+	}];
+}
+
 
 
 @end

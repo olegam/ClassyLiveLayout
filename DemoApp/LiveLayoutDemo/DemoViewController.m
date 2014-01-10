@@ -32,13 +32,14 @@
 - (void)updateViewConstraints {
 	[super updateViewConstraints];
 
-	[_blueBoxView mas_updateConstraints:^(MASConstraintMaker *make) {
-		make.width.equalTo(@(_blueBoxView.cas_size.width));
-		make.height.equalTo(@(_blueBoxView.cas_size.height));
-		make.top.equalTo(@(_blueBoxView.cas_margin.top));
-		make.left.equalTo(@(_blueBoxView.cas_margin.left));
-	}];
+	// new shorthand notation
+	[_blueBoxView mas_updateConstraintsWidthFromStylesheet];
+	[_blueBoxView mas_updateConstraintsHeightFromStylesheet];
+	[_blueBoxView mas_updateConstraintsWithTopMarginRelativeTo:self.view];
+	[_blueBoxView mas_updateConstraintsWithLeftMarginRelativeTo:self.view];
 
+
+	// traditional Masonry notation
 	[_redBoxView mas_updateConstraints:^(MASConstraintMaker *make) {
 		make.width.equalTo(@(_redBoxView.cas_size.width));
 		make.height.equalTo(_blueBoxView);
