@@ -39,7 +39,7 @@
 	[_blueBoxView mas_updateConstraintsWithLeftMarginRelativeTo:self.view];
 
 
-	// traditional Masonry notation
+	// traditional Masonry notationmain
 	[_redBoxView mas_updateConstraints:^(MASConstraintMaker *make) {
 		make.width.equalTo(@(_redBoxView.cas_size.width));
 		make.height.equalTo(_blueBoxView);

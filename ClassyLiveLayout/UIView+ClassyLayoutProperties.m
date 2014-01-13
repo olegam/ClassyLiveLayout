@@ -11,7 +11,7 @@
 @implementation UIView (ClassyLayoutProperties)
 
 - (void)updateSuperviewsConstraints {
-	// Only trigger reloading of constrains when debugging to not hurt performance
+	// Only trigger reloading of constraints when debugging to not hurt performance
 #ifdef TARGET_IPHONE_SIMULATOR
 	UIView *view = self.superview;
 	while (view) {
