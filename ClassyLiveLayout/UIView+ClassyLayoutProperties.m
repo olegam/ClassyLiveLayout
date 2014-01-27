@@ -127,6 +127,24 @@
 
 #pragma mark - Masonry shortcuts
 
+- (NSArray *)mas_updateConstraintsWithTopMarginRelativeToSuperview {
+	return [self mas_updateConstraintsWithTopMarginRelativeTo:self.superview];
+}
+
+- (NSArray *)mas_updateConstraintsWithLeftMarginRelativeToSuperview {
+	return [self mas_updateConstraintsWithLeftMarginRelativeTo:self.superview];
+}
+
+- (NSArray *)mas_updateConstraintsWithBottomMarginRelativeToSuperview {
+	return [self mas_updateConstraintsWithBottomMarginRelativeTo:self.superview];
+}
+
+- (NSArray *)mas_updateConstraintsWithRightMarginRelativeToSuperview {
+	return [self mas_updateConstraintsWithRightMarginRelativeTo:self.superview];
+}
+
+
+
 - (NSArray *)mas_updateConstraintsWithTopMarginRelativeTo:(id)attribute {
 	return [self mas_updateConstraints:^(MASConstraintMaker *make) {
 		make.top.equalTo(attribute).with.offset(self.cas_marginTop);
@@ -162,6 +180,7 @@
 		make.width.equalTo(@(self.cas_sizeWidth));
 	}];
 }
+
 
 
 
