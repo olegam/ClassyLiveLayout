@@ -4,5 +4,5 @@ inhibit_all_warnings!
 pod 'ClassyLiveLayout', :path => '../'
 pod 'Masonry'
 pod 'Classy'
-pod 'Reveal-iOS-SDK'
+#pod 'Reveal-iOS-SDK'
 
