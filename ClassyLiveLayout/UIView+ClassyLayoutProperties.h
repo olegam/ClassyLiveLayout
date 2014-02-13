@@ -19,6 +19,8 @@
 @property(nonatomic, assign) CGFloat cas_marginBottom;
 @property(nonatomic, assign) CGFloat cas_marginRight;
 
++ (void)recursivelyUpdateStylingImmediately:(UIView *)view;
+
 // Masonry shortcuts to make it easy to bind values to what is defined in classy stylesheet
 - (NSArray *)mas_updateConstraintsWithTopMarginRelativeToSuperview;
 - (NSArray *)mas_updateConstraintsWithLeftMarginRelativeToSuperview;

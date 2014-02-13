@@ -4,3 +4,6 @@
 //
 
 #import "UIView+ClassyLayoutProperties.h"
+#import "SHPAbstractView.h"
+#import "SHPAbstractTableViewCell.h"
+#import "SHPAbstractCollectionViewCell.h"

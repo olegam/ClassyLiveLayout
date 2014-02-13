@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		4D1D2339D4C34A18B200BA30 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 585DDF5EFC2F472DB59C86C4 /* libPods.a */; };
 		85C5A02F5564A8A0DC401CEF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85C5ACF1910BBE74709D8EAC /* XCTest.framework */; };
+		85C5A0D34DEBFC098DB1FEF7 /* ExampleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C5AB20C807D4EBFA256610 /* ExampleTableViewController.m */; };
+		85C5A0DB6C891A129639A8D8 /* ExampleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C5A2FAFA851B6DAC6ABC33 /* ExampleTableViewCell.m */; };
 		85C5A158C4B40A51E9ED0063 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 85C5A343AF7CC2E37E047B94 /* InfoPlist.strings */; };
 		85C5A1A23FF81B9EBB821637 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85C5A01D4C9850F068C7567E /* UIKit.framework */; };
 		85C5A2100E37104B1185FA98 /* LiveLayoutDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C5AAD4CD4DB4CEECE9877B /* LiveLayoutDemoTests.m */; };
 		85C5A315D07A71F66CF7B820 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C5A85BE9182B944B478ABE /* AppDelegate.m */; };
 		85C5A571B3B92684705C6A16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C5A0C27FC75C722CE35A8F /* main.m */; };
+		85C5A6327ACD7A9D510EC980 /* DemoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C5A0204889923FBC5D25BE /* DemoView.m */; };
 		85C5A6392490D25810375F95 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85C5A483707883FAB08A1B6F /* Foundation.framework */; };
 		85C5A71D84119E8A9429680C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85C5A9F862030C9F875B220A /* Images.xcassets */; };
 		85C5A79AA0703420D72505CA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85C5A201EBEE6F56E0CD8CCA /* CoreGraphics.framework */; };
@@ -38,20 +41,26 @@
 		4353D1E49A2A40298181B6FB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		585DDF5EFC2F472DB59C86C4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		85C5A01D4C9850F068C7567E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		85C5A0204889923FBC5D25BE /* DemoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoView.m; sourceTree = "<group>"; };
 		85C5A0B77E110BD7582D167F /* LiveLayoutDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "LiveLayoutDemo-Info.plist"; sourceTree = "<group>"; };
+		85C5A0B8B61B056472126CCD /* ExampleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleTableViewCell.h; sourceTree = "<group>"; };
 		85C5A0C27FC75C722CE35A8F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		85C5A201EBEE6F56E0CD8CCA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		85C5A211130A047D12175B9B /* LiveLayoutDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "LiveLayoutDemoTests-Info.plist"; sourceTree = "<group>"; };
+		85C5A2FAFA851B6DAC6ABC33 /* ExampleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleTableViewCell.m; sourceTree = "<group>"; };
 		85C5A355758B563689675D80 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		85C5A483707883FAB08A1B6F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		85C5A506B1D61286872BD002 /* LiveLayoutDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiveLayoutDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		85C5A557D59C81E8A85E24C3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		85C5A66D01EE227795E01E0A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		85C5A68C2AA16EDF65650EE9 /* DemoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoView.h; sourceTree = "<group>"; };
 		85C5A6A7646E2466A22AA991 /* LiveLayoutDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveLayoutDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		85C5A83BA1FD9FEAB3937080 /* ExampleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleTableViewController.h; sourceTree = "<group>"; };
 		85C5A85BE9182B944B478ABE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		85C5A86C7FE98D862F6CDA98 /* DemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
 		85C5A9F862030C9F875B220A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		85C5AAD4CD4DB4CEECE9877B /* LiveLayoutDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiveLayoutDemoTests.m; sourceTree = "<group>"; };
+		85C5AB20C807D4EBFA256610 /* ExampleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleTableViewController.m; sourceTree = "<group>"; };
 		85C5ACF1910BBE74709D8EAC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		85C5ADC09FA866EFC2419D68 /* stylesheet.cas */ = {isa = PBXFileReference; lastKnownFileType = file.cas; path = stylesheet.cas; sourceTree = "<group>"; };
 		85C5AE213AAB3DD0BF46C002 /* DemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
@@ -110,6 +119,12 @@
 				85C5A9F862030C9F875B220A /* Images.xcassets */,
 				85C5A86C7FE98D862F6CDA98 /* DemoViewController.m */,
 				85C5AE213AAB3DD0BF46C002 /* DemoViewController.h */,
+				85C5A0204889923FBC5D25BE /* DemoView.m */,
+				85C5A68C2AA16EDF65650EE9 /* DemoView.h */,
+				85C5AB20C807D4EBFA256610 /* ExampleTableViewController.m */,
+				85C5A83BA1FD9FEAB3937080 /* ExampleTableViewController.h */,
+				85C5A2FAFA851B6DAC6ABC33 /* ExampleTableViewCell.m */,
+				85C5A0B8B61B056472126CCD /* ExampleTableViewCell.h */,
 			);
 			path = LiveLayoutDemo;
 			sourceTree = "<group>";
@@ -288,6 +303,9 @@
 				85C5A571B3B92684705C6A16 /* main.m in Sources */,
 				85C5A315D07A71F66CF7B820 /* AppDelegate.m in Sources */,
 				85C5AB7930A53140939713A2 /* DemoViewController.m in Sources */,
+				85C5A6327ACD7A9D510EC980 /* DemoView.m in Sources */,
+				85C5A0D34DEBFC098DB1FEF7 /* ExampleTableViewController.m in Sources */,
+				85C5A0DB6C891A129639A8D8 /* ExampleTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

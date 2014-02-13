@@ -1,13 +1,22 @@
 
-
 UIView.blue-box {
-    cas_size: 120 80
-    cas_margin-top: 70
-    cas_margin-left: 50
+    background-color: blue;
+    cas_size: 120 80;
+    cas_margin-top: 110;
+    cas_margin-left: 50;
 }
 
 UIView.red-box {
-    cas_size-width: 70
-    cas_margin-left: 10
+    background-color: red;
+    cas_size-width: 70;
+    cas_margin-left: 10;
+}
+
+UIButton.table-button {
+    cas_margin-top: 250;
+}
+
+ExampleTableViewCell {
+    cas_size-height: 70;
 }
 

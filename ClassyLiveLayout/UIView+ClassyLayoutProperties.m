@@ -4,11 +4,19 @@
 //
 
 #import <objc/runtime.h>
+#import "Classy.h"
 #import "UIView+ClassyLayoutProperties.h"
 #import "View+MASAdditions.h"
 
 
 @implementation UIView (ClassyLayoutProperties)
+
++ (void)recursivelyUpdateStylingImmediately:(UIView *)view {
+	[view cas_updateStyling];
+	[view.subviews enumerateObjectsUsingBlock:^(UIView *subview, NSUInteger idx, BOOL *stop) {
+		[self recursivelyUpdateStylingImmediately:subview];
+	}];
+}
 
 - (void)updateSuperviewsConstraints {
 	// Only trigger reloading of constraints when debugging to not hurt performance
