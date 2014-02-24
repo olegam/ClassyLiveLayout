@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
   s.name     = 'ClassyLiveLayout'
-  s.version  = '0.4.0'
+  s.version  = '0.5.0'
   s.license  = 'MIT'
   s.summary  = 'Use Classy stylesheets together with Masonry to tweak AutoLayout constants live when debugging in the simulator.'
   s.homepage = 'http://github.com/olegam/ClassyLiveLayout'
   s.author   = { 'Ole Gammelgaard Poulsen' => 'ole@shape.dk' }
-  s.source   = { :git => 'https://github.com/olegam/ClassyLiveLayout.git', :tag => 'v0.4.0' }
+  s.source   = { :git => 'https://github.com/olegam/ClassyLiveLayout.git', :tag => 'v0.5.0' }
   s.dependency 'Masonry'
   s.dependency 'Classy'
 
