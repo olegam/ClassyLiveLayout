@@ -21,9 +21,9 @@ In the stylesheet we set the constants implicitly referenced in the above layout
 ```
 UIView.blue-box {
     background-color: blue;
-    cas_size: 120 80;
-    cas_margin-top: 110;
-    cas_margin-left: 50;
+    size: 120 80;
+    margin-top: 110;
+    margin-left: 50;
 }
 ```
 

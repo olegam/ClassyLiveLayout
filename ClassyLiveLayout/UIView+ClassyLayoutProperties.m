@@ -19,6 +19,23 @@
 	}];
 }
 
++ (void)load {
+	[super load];
+
+	CASObjectClassDescriptor *objectClassDescriptor = [[CASStyler defaultStyler] objectClassDescriptorForClass:UIView.class];
+	objectClassDescriptor.propertyKeyAliases = @{
+			@"size"			: @cas_propertykey(UIView, cas_size),
+			@"sizeWidth"	: @cas_propertykey(UIView, cas_sizeWidth),
+			@"sizeHeight"	: @cas_propertykey(UIView, cas_sizeHeight),
+			@"margin"		: @cas_propertykey(UIView, cas_margin),
+			@"marginTop"	: @cas_propertykey(UIView, cas_marginTop),
+			@"marginLeft"	: @cas_propertykey(UIView, cas_marginLeft),
+			@"marginBottom"	: @cas_propertykey(UIView, cas_marginBottom),
+			@"marginRight"	: @cas_propertykey(UIView, cas_marginRight),
+	};
+}
+
+
 - (void)updateSuperviewsConstraints {
 	// Only trigger reloading of constraints when debugging to not hurt performance
 #ifdef TARGET_IPHONE_SIMULATOR
