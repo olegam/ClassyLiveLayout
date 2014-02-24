@@ -4,6 +4,7 @@
 //
 
 #import <objc/runtime.h>
+#import <Masonry/MASLayoutConstraint.h>
 #import "Classy.h"
 #import "UIView+ClassyLayoutProperties.h"
 #import "View+MASAdditions.h"
@@ -188,6 +189,22 @@
 		make.width.equalTo(@(self.cas_sizeWidth));
 	}];
 }
+
+- (NSArray *)mas_updateConstraintsCenterX {
+	NSAssert(self.superview, @"Must have a superview already when calling this");
+	return [self mas_updateConstraints:^(MASConstraintMaker *make) {
+		make.centerX.equalTo(self.superview);
+	}];
+}
+
+- (NSArray *)mas_updateConstraintsCenterY {
+	NSAssert(self.superview, @"Must have a superview already when calling this");
+	return [self mas_updateConstraints:^(MASConstraintMaker *make) {
+		make.centerY.equalTo(self.superview);
+	}];
+}
+
+
 
 
 

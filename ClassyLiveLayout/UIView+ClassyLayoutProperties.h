@@ -35,4 +35,8 @@
 - (NSArray *)mas_updateConstraintsHeightFromStylesheet;
 - (NSArray *)mas_updateConstraintsWidthFromStylesheet;
 
+// Just a few simple shortcuts to be able to center in one line of code
+- (NSArray *)mas_updateConstraintsCenterX;
+- (NSArray *)mas_updateConstraintsCenterY;
+
 @end
