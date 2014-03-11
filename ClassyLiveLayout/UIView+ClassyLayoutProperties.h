@@ -21,6 +21,8 @@
 
 + (void)recursivelyUpdateStylingImmediately:(UIView *)view;
 
++ (CGSize)sizeFromStylesheet;
+
 // Masonry shortcuts to make it easy to bind values to what is defined in classy stylesheet
 - (NSArray *)mas_updateConstraintsWithTopMarginRelativeToSuperview;
 - (NSArray *)mas_updateConstraintsWithLeftMarginRelativeToSuperview;

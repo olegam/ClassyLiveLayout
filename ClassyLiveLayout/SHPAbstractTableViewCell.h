@@ -8,10 +8,6 @@
 
 @interface SHPAbstractTableViewCell : UITableViewCell
 
-// you can use this method to load the cell height if a cas_size-height
-// matching the cell's class is defined in the stylesheet.
-+ (CGFloat)cellHeightFromStylesheet;
-
 // You must override these methods in subclasses
 
 // Override this method and add all subviews to the contentView in it

@@ -5,6 +5,7 @@
 
 #import "ExampleTableViewController.h"
 #import "ExampleTableViewCell.h"
+#import "UIView+ClassyLayoutProperties.h"
 
 @interface ExampleTableViewController ()
 
@@ -40,7 +41,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	return [ExampleTableViewCell cellHeightFromStylesheet];
+	return [ExampleTableViewCell sizeFromStylesheet].height;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -222,7 +222,24 @@
 }
 
 
-
++ (CGSize)sizeFromStylesheet {
+	// because creating a new dummy view and loading its size from stylesheet is expensive we cache it
+	NSValue *cachedSizeValue = objc_getAssociatedObject(self, @selector(sizeFromStylesheet));
+	BOOL useCachedSize = cachedSizeValue != nil;
+#if TARGET_IPHONE_SIMULATOR
+	// never cache in simulator because we want live reload and don't care about performance
+	useCachedSize = NO;
+#endif
+	if (useCachedSize) {
+		return [cachedSizeValue CGSizeValue];
+	} else {
+		UIView *dummyView = [[self alloc] initWithFrame:CGRectZero];
+		[dummyView cas_updateStyling];
+		CGSize size = dummyView.cas_size;
+		objc_setAssociatedObject(self, @selector(sizeFromStylesheet), [NSValue valueWithCGSize:size], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+		return size;
+	}
+}
 
 
 
