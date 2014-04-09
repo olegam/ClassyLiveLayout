@@ -13,7 +13,7 @@
 @implementation UIView (ClassyLayoutProperties)
 
 + (void)recursivelyUpdateStylingImmediately:(UIView *)view {
-	[view cas_updateStyling];
+	[CASStyler.defaultStyler styleItem:view];
 	[view.subviews enumerateObjectsUsingBlock:^(UIView *subview, NSUInteger idx, BOOL *stop) {
 		[self recursivelyUpdateStylingImmediately:subview];
 	}];
@@ -234,7 +234,7 @@
 		return [cachedSizeValue CGSizeValue];
 	} else {
 		UIView *dummyView = [[self alloc] initWithFrame:CGRectZero];
-		[dummyView cas_updateStyling];
+		[CASStyler.defaultStyler styleItem:dummyView];
 		CGSize size = dummyView.cas_size;
 		objc_setAssociatedObject(self, @selector(sizeFromStylesheet), [NSValue valueWithCGSize:size], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 		return size;
