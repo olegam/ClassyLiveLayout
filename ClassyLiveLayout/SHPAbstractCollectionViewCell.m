@@ -17,6 +17,19 @@
 	return self;
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    
+    if (self) {
+        [self addSubviews];
+        [UIView recursivelyUpdateStylingImmediately:self];
+        [self defineLayout];
+    }
+    
+    return self;
+}
+
 - (void)updateConstraints {
 	[self defineLayout];
 	[super updateConstraints];
