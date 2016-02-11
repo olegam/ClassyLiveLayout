@@ -4,7 +4,7 @@ Iterate blazingly fast when defining view layouts by putting your AutoLayout con
 
 Suplementary blogpost: http://codeblog.shape.dk/blog/2013/12/16/live-editing-layout-constants-using-classy/
 
-This repository (and pod available through Cocoapods) contains the category `UIView+ClassyLayoutProperties` making it easy to define size and margin properties on views that can be set from a [Classy](http://classy.as) stylesheet and trigger `-updateConstraints` that can then easily be implemented using [Masonry](https://github.com/cloudkite/Masonry)'s `mas_updateConstraints:`. This pod also contains a number of convenient methods making it easy and declarative to define layouts with constants taken from the stylesheet.
+This repository (and pod available through CocoaPods) contains the category `UIView+ClassyLayoutProperties` making it easy to define size and margin properties on views that can be set from a [Classy](http://classy.as) stylesheet and trigger `-updateConstraints` that can then easily be implemented using [Masonry](https://github.com/cloudkite/Masonry)'s `mas_updateConstraints:`. This pod also contains a number of convenient methods making it easy and declarative to define layouts with constants taken from the stylesheet.
 
 
 In your view's -updateConstraints method you define a layout like this:
